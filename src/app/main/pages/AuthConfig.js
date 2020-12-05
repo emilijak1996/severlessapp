@@ -19,6 +19,10 @@ const AuthConfig = {
 		{
 			path: '/register',
 			component: React.lazy(() => import('./RegisterPage'))
+		},
+		{
+			path: '/forgotpassword',
+			component: React.lazy(() => import('./ForgotPasswordPage'))
 		}
 	]
 };

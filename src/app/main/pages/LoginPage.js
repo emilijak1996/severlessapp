@@ -3,10 +3,7 @@ import { useForm } from '@fuse/hooks';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import Checkbox from '@material-ui/core/Checkbox';
 import Divider from '@material-ui/core/Divider';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { makeStyles } from '@material-ui/core/styles';
 import { darken } from '@material-ui/core/styles/colorManipulator';
 import TextField from '@material-ui/core/TextField';
@@ -129,7 +126,7 @@ function LoginPage() {
 										/>
 									</FormControl> */}
 
-									<Link className="font-medium" to="/pages/auth/forgot-password-2">
+									<Link className="font-medium" to="/forgotpassword">
 										Forgot Password?
 									</Link>
 								</div>
@@ -168,19 +165,22 @@ function LoginPage() {
 					<div
 						className={clsx(classes.rightSection, 'hidden md:flex flex-1 items-center justify-center p-64')}
 					>
-						<div className="max-w-320">
+						<div className="max-w-520">
 							<FuseAnimate animation="transition.slideUpIn" delay={400}>
 								<Typography variant="h3" color="inherit" className="font-800 leading-tight">
-									Welcome <br />
-									to the <br /> FUSE React!
+									<center>
+										The Ultimate <br />
+										Dropshipping Solution
+									</center>
 								</Typography>
 							</FuseAnimate>
-
 							<FuseAnimate delay={500}>
 								<Typography variant="subtitle1" color="inherit" className="mt-32">
-									Powerful and professional admin template for Web Applications, CRM, CMS, Admin
-									Panels and more.
+									<center>AliExpress Dropshipping Partner APP</center>
 								</Typography>
+							</FuseAnimate>
+							<FuseAnimate delay={600}>
+								<center><img className="mt-48 w-256" src="assets/images/etc/loginleft.png" alt="image" /></center>
 							</FuseAnimate>
 						</div>
 					</div>

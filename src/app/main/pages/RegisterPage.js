@@ -3,9 +3,6 @@ import { useForm } from '@fuse/hooks';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import Checkbox from '@material-ui/core/Checkbox';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { makeStyles } from '@material-ui/core/styles';
 import { darken } from '@material-ui/core/styles/colorManipulator';
 import TextField from '@material-ui/core/TextField';
@@ -23,7 +20,7 @@ const useStyles = makeStyles(theme => ({
 		color: theme.palette.primary.contrastText
 	},
 	leftSection: {},
-	rightSection: {
+	rightSection: {	
 		background: "#364049",
 		color: theme.palette.primary.contrastText
 	}
@@ -175,13 +172,15 @@ function RegisterPage() {
 						<div className="max-w-320">
 							<FuseAnimate animation="transition.slideUpIn" delay={400}>
 								<Typography variant="h3" color="inherit" className="font-800 leading-tight">
-									Start Your 14 day Free Trial!
+									<center>Start Your 14 day Free Trial!</center>
 								</Typography>
 							</FuseAnimate>
 
 							<FuseAnimate delay={500}>
 								<Typography variant="subtitle1" color="inherit" className="mt-32">
-									Join thousands of ecom entrepreneurs achieving dropshipping succes.
+									<center>
+										Join thousands of ecom entrepreneurs achieving dropshipping success.
+									</center>
 								</Typography>
 							</FuseAnimate>
 						</div>
