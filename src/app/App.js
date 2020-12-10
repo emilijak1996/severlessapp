@@ -1,53 +1,36 @@
-import MomentUtils from '@date-io/moment';
-import FuseAuthorization from '@fuse/core/FuseAuthorization';
-import FuseLayout from '@fuse/core/FuseLayout';
-import FuseTheme from '@fuse/core/FuseTheme';
-import history from '@history';
-import { createGenerateClassName, jssPreset, StylesProvider } from '@material-ui/core/styles';
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import { create } from 'jss';
-import jssExtend from 'jss-plugin-extend';
-import rtl from 'jss-rtl';
-import React from 'react';
-import Provider from 'react-redux/es/components/Provider';
-import { Router } from 'react-router-dom';
-import AppContext from './AppContext';
-import { Auth } from './auth';
-import routes from './fuse-configs/routesConfig';
-import store from './store';
+/**
+ * Entry application component used to compose providers and render Routes.
+ * */
 
-const jss = create({
-	...jssPreset(),
-	plugins: [...jssPreset().plugins, jssExtend(), rtl()],
-	insertionPoint: document.getElementById('jss-insertion-point')
-});
+import React from "react";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import { PersistGate } from "redux-persist/integration/react";
+import { Routes } from "../app/Routes";
+import { I18nProvider } from "../_metronic/i18n";
+import { LayoutSplashScreen, MaterialThemeProvider } from "../_metronic/layout";
 
-const generateClassName = createGenerateClassName();
-
-const App = () => {
-	return (
-		<AppContext.Provider
-			value={{
-				routes
-			}}
-		>
-			<StylesProvider jss={jss} generateClassName={generateClassName}>
-				<Provider store={store}>
-					<MuiPickersUtilsProvider utils={MomentUtils}>
-						<Auth>
-							<Router history={history}>
-								<FuseAuthorization>
-									<FuseTheme>
-										<FuseLayout />
-									</FuseTheme>
-								</FuseAuthorization>
-							</Router>
-						</Auth>
-					</MuiPickersUtilsProvider>
-				</Provider>
-			</StylesProvider>
-		</AppContext.Provider>
-	);
-};
-
-export default App;
+export default function App({ store, persistor, basename }) {
+  return (
+    /* Provide Redux store */
+    <Provider store={store}>
+      {/* Asynchronously persist redux stores and show `SplashScreen` while it's loading. */}
+      <PersistGate persistor={persistor} loading={<LayoutSplashScreen />}>
+        {/* Add high level `Suspense` in case if was not handled inside the React tree. */}
+        <React.Suspense fallback={<LayoutSplashScreen />}>
+          {/* Override `basename` (e.g: `homepage` in `package.json`) */}
+          <BrowserRouter basename={basename}>
+            {/*This library only returns the location that has been active before the recent location change in the current window lifetime.*/}
+            <MaterialThemeProvider>
+              {/* Provide `react-intl` context synchronized with Redux state.  */}
+              <I18nProvider>
+                {/* Render routes with provided `Layout`. */}
+                <Routes />
+              </I18nProvider>
+            </MaterialThemeProvider>
+          </BrowserRouter>
+        </React.Suspense>
+      </PersistGate>
+    </Provider>
+  );
+}
