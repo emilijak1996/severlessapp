@@ -96,24 +96,7 @@ function ChangePassword(props) {
             Change your account password
           </span>
         </div>
-        <div className="card-toolbar">
-          <button
-            type="submit"
-            className="btn btn-success mr-2"
-            disabled={
-              formik.isSubmitting || (formik.touched && !formik.isValid)
-            }
-          >
-            Save Changes
-            {formik.isSubmitting}
-          </button>
-          <Link
-            to="/user-profile/profile-overview"
-            className="btn btn-secondary"
-          >
-            Cancel
-          </Link>
-        </div>
+        
       </div>
       {/* end::Header */}
       {/* begin::Form */}

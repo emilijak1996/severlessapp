@@ -102,24 +102,6 @@ function AccountInformation(props) {
             Change your account settings
           </span>
         </div>
-        <div className="card-toolbar">
-          <button
-            type="submit"
-            className="btn btn-success mr-2"
-            disabled={
-              formik.isSubmitting || (formik.touched && !formik.isValid)
-            }
-          >
-            Save Changes
-            {formik.isSubmitting}
-          </button>
-          <Link
-            to="/user-profile/profile-overview"
-            className="btn btn-secondary"
-          >
-            Cancel
-          </Link>
-        </div>
       </div>
       {/* end::Header */}
       {/* begin::Form */}
@@ -151,40 +133,6 @@ function AccountInformation(props) {
                   </div>
                 ) : null}
               </div>
-            </div>
-          </div>
-          {/* begin::Form Group */}
-          <div className="form-group row">
-            <label className="col-xl-3 col-lg-3 col-form-label">
-              Email Address
-            </label>
-            <div className="col-lg-9 col-xl-6">
-              <div className="input-group input-group-lg input-group-solid">
-                <div className="input-group-prepend">
-                  <span className="input-group-text">
-                    <i className="fa fa-at"></i>
-                  </span>
-                </div>
-                <input
-                  type="text"
-                  placeholder="Email"
-                  className={`form-control form-control-lg form-control-solid ${getInputClasses(
-                    "email"
-                  )}`}
-                  name="email"
-                  {...formik.getFieldProps("email")}
-                />
-                {formik.touched.email && formik.errors.email ? (
-                  <div className="invalid-feedback">{formik.errors.email}</div>
-                ) : null}
-              </div>
-              <span className="form-text text-muted">
-                Email will not be publicly displayed.{` `}
-                <a href="#" className="font-weight-bold">
-                  Learn more
-                </a>
-                .
-              </span>
             </div>
           </div>
           {/* begin::Form Group */}
@@ -270,45 +218,7 @@ function AccountInformation(props) {
               </select>
             </div>
           </div>
-          {/* begin::Form Group */}
-          <div className="form-group row align-items-center">
-            <label className="col-xl-3 col-lg-3 col-form-label">
-              Communication
-            </label>
-            <div className="col-lg-9 col-xl-6">
-              <div className="checkbox-inline">
-                <label className="checkbox">
-                  <input
-                    type="checkbox"
-                    name="communicationEmail"
-                    checked={formik.values.communicationEmail}
-                    onChange={formik.handleChange}
-                  />
-                  <span></span>Email
-                </label>
-                <label className="checkbox">
-                  <input
-                    type="checkbox"
-                    name="communicationSMS"
-                    checked={formik.values.communicationSMS}
-                    {...formik.getFieldProps("communicationSMS")}
-                    onChange={formik.handleChange}
-                  />
-                  <span></span>SMS
-                </label>
-                <label className="checkbox">
-                  <input
-                    type="checkbox"
-                    name="communicationPhone"
-                    checked={formik.values.communicationPhone}
-                    {...formik.getFieldProps("communicationPhone")}
-                    onChange={formik.handleChange}
-                  />
-                  <span></span>Phone
-                </label>
-              </div>
-            </div>
-          </div>
+          
           {/* begin::Form Group */}
           <div className="separator separator-dashed my-5"></div>
           {/* begin::Form Group */}
@@ -339,35 +249,6 @@ function AccountInformation(props) {
                 </a>
                 .
               </p>
-            </div>
-          </div>
-          {/* begin::Form Group */}
-          <div className="form-group row">
-            <label className="col-xl-3 col-lg-3 col-form-label">
-              Password reset verification
-            </label>
-            <div className="col-lg-9 col-xl-6">
-              <div className="checkbox-inline">
-                <label className="checkbox m-0">
-                  <input type="checkbox" />
-                  <span></span>Require personal information to reset your
-                  password.
-                </label>
-              </div>
-              <p className="form-text text-muted py-2">
-                For extra security, this requires you to confirm your email or
-                phone number when you reset your password.
-                <a href="#" className="font-weight-boldk">
-                  Learn more
-                </a>
-                .
-              </p>
-              <button
-                type="button"
-                className="btn btn-light-danger font-weight-bold btn-sm"
-              >
-                Deactivate your account ?
-              </button>
             </div>
           </div>
         </div>

@@ -108,24 +108,6 @@ function PersonaInformation(props) {
             Update your personal informaiton
           </span>
         </div>
-        <div className="card-toolbar">
-          <button
-            type="submit"
-            className="btn btn-success mr-2"
-            disabled={
-              formik.isSubmitting || (formik.touched && !formik.isValid)
-            }
-          >
-            Save Changes
-            {formik.isSubmitting}
-          </button>
-          <Link
-            to="/user-profile/profile-overview"
-            className="btn btn-secondary"
-          >
-            Cancel
-          </Link>
-        </div>
       </div>
       {/* end::Header */}
       {/* begin::Form */}
@@ -314,7 +296,7 @@ function PersonaInformation(props) {
               </div>
             </div>
           </div>
-          <div className="form-group row">
+          {/* <div className="form-group row">
             <label className="col-xl-3 col-lg-3 col-form-label">
               Company Site
             </label>
@@ -334,7 +316,7 @@ function PersonaInformation(props) {
                 ) : null}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         {/* end::Body */}
       </div>

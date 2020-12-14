@@ -3,7 +3,7 @@ import { toAbsoluteUrl } from "../../../../_metronic/_helpers";
 export default [
   {
     id: 1,
-    username: "admin",
+    username: "admin@demo.com",
     password: "demo",
     email: "admin@demo.com",
     accessToken: "access-token-8f3ae836da744329a6f93bf20594b5cc",
