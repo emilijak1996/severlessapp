@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useSelector, shallowEqual, connect, useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import * as Yup from "yup";
