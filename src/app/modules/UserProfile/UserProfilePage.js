@@ -6,6 +6,7 @@ import ChangePassword from "./ChangePassword";
 import PersonaInformation from "./PersonaInformation";
 import Billing from "./Billing";
 import { ProfileCard } from "./components/ProfileCard";
+import InvoicePage from "./components/InvoicePage";
 
 export default function UserProfilePage() {
   const suhbeader = useSubheader();
@@ -35,6 +36,10 @@ export default function UserProfilePage() {
           <Route
             path="/user-profile/personal-information"
             component={PersonaInformation}
+          />
+          <Route
+            path="/user-profile/invoice"
+            component={InvoicePage}
           />
         </Switch>
       </div>

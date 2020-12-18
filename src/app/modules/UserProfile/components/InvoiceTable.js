@@ -5,7 +5,7 @@ import SVG from "react-inlinesvg";
 import { toAbsoluteUrl } from "../../../../_metronic/_helpers";
 import { Link } from "react-router-dom";
 
-export function InvoiceTable({ className }) {
+export function InvoiceTable() {
     const invoices = [
         {
             date: "Dec 13 2020",
@@ -64,17 +64,17 @@ export function InvoiceTable({ className }) {
                             </span>
                         </td>
                         <td className="pr-0 text-right">
-                            <a
+                            <Link
                                 title="Edit customer"
                                 className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3"
-                                // onClick={}
+                                to="/user-profile/invoice"
                             >
                                 <span className="svg-icon svg-icon-md svg-icon-primary">
                                 <SVG
                                     src={toAbsoluteUrl("/media/svg/icons/General/Visible.svg")}
                                 />
                                 </span>
-                            </a>
+                            </Link>
                             <a
                                 title="Edit customer"
                                 className="btn btn-icon btn-light btn-hover-success btn-sm mx-3"
