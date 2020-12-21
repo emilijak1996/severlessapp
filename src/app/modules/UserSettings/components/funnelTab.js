@@ -5,87 +5,84 @@ import SVG from "react-inlinesvg";
 import { toAbsoluteUrl } from "../../../../_metronic/_helpers";
 import { Link } from "react-router-dom";
 
-export function InvoiceTable() {
-    const invoices = [
+export function FunnelTab() {
+    const funnels = [
         {
-            id: "abcd",
-            date: "Dec 13 2020",
-            transaction: "trans1",
-            amount: 230,
+            funnelName: "funnel",
+            funnelType: "Clickfunnels",
+            webhookUrl: "www.webhook.com",
             payment: "Deposit"
         },
-        {
-            id: "efgh",
-            date: "Dec 1 2020",
-            transaction: "trans3",
-            amount: 23,
-            payment: "Deposit"
-        },
-        {
-            id: "ijkl",
-            date: "Nov 13 2020",
-            transaction: "trans2",
-            amount: 2,
-            payment: "Deposit"
-        }
     ]
   return (
     <>
         {/* begin::Table */}
         <div className="table-responsive">
+            <a href="#" className="btn btn-primary font-weight-bold mb-4">
+                <span className="svg-icon">
+                    <SVG
+                        src={toAbsoluteUrl("/media/svg/icons/code/plus.svg")}
+                    />
+                </span> Add Funnel
+            </a>
             <table className="table table-head-custom table-vertical-center table-head-bg table-borderless">
             <thead>
                 <tr className="text-left">
-                <th style={{ minWidth: "120px" }}>Date</th>
-                <th style={{ minWidth: "100px" }}>Transaction</th>
-                <th style={{ minWidth: "100px" }}>Amount</th>
-                <th style={{ minWidth: "100px" }}>Payment Method</th>
+                <th style={{ minWidth: "120px" }}>Funnel Name</th>
+                <th style={{ minWidth: "100px" }}>Funnel Type</th>
+                <th style={{ minWidth: "100px" }}>Webhook URL</th>
                 <th style={{ minWidth: "100px" }} />
                 </tr>
             </thead>
             <tbody>
-                {invoices.map((invoice, index) => {
+                {funnels.map((funnel, index) => {
                     return(<tr key={index} >
                         <td>
                             <span className="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                {invoice.date}
+                                {funnel.funnelName}
                             </span>
                         </td>
                         <td>
                             <span className="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                {invoice.transaction}
+                                {funnel.funnelType}
                             </span>
                         </td>
                         <td>
                             <span className="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                {invoice.amount}
-                            </span>
-                        </td>
-                        <td>
-                            <span className="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                {invoice.payment}
+                                {funnel.webhookUrl}
                             </span>
                         </td>
                         <td className="pr-0 text-right">
-                            <Link
+                            <a
                                 title="Edit customer"
-                                className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3"
-                                to={`/user-profile/invoice/${invoice.id}`}
+                                className="btn btn-icon btn-light btn-hover-primary btn-sm mx-1"
+                                // onClick={}
                             >
                                 <span className="svg-icon svg-icon-md svg-icon-primary">
                                 <SVG
-                                    src={toAbsoluteUrl("/media/svg/icons/General/Visible.svg")}
+                                    src={toAbsoluteUrl("/media/svg/icons/General/edit.svg")}
                                 />
                                 </span>
-                            </Link>
+                            </a>
                             <a
                                 title="Edit customer"
-                                className="btn btn-icon btn-light btn-hover-success btn-sm mx-3"
+                                className="btn btn-icon btn-light btn-hover-success btn-sm mx-1"
                                 // onClick={}
                             >
                                 <span className="svg-icon svg-icon-md svg-icon-success">
                                 <SVG
-                                    src={toAbsoluteUrl("/media/svg/icons/Files/download.svg")}
+                                    src={toAbsoluteUrl("/media/svg/icons/general/visible.svg")}
+                                />
+                                </span>
+                            </a>
+                            <a
+                                title="Edit customer"
+                                className="btn btn-icon btn-light btn-hover-danger btn-sm mx-1"
+                                // onClick={}
+                            >
+                                <span className="svg-icon svg-icon-md svg-icon-danger">
+                                <SVG
+                                    src={toAbsoluteUrl("/media/svg/icons/general/trash.svg")}
                                 />
                                 </span>
                             </a>

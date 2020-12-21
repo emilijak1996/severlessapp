@@ -38,7 +38,7 @@ export default function UserProfilePage() {
             component={PersonaInformation}
           />
           <Route
-            path="/user-profile/invoice"
+            path="/user-profile/invoice/:id"
             component={InvoicePage}
           />
         </Switch>

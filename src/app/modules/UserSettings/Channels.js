@@ -6,9 +6,10 @@ import * as Yup from "yup";
 import { ModalProgressBar } from "../../../_metronic/_partials/controls";
 import * as auth from "../Auth";
 import { ToggleButtonGroup, ToggleButton } from "react-bootstrap";
-import { InvoiceTable } from "./components/InvoiceTable";
+import { ChannelTab } from "./components/channelTab";
+import { FunnelTab } from "./components/funnelTab";
 
-function Billing(props) {
+function Channels(props) {
   // Fields
   const [loading, setloading] = useState(false);
   // const [isError, setisError] = useState(false);
@@ -85,10 +86,10 @@ function Billing(props) {
       <div className="card-header py-3">
         <div className="card-title align-items-start flex-column">
           <h3 className="card-label font-weight-bolder text-dark">
-            Billing
+            Channels
           </h3>
           <span className="text-muted font-weight-bold font-size-sm mt-1">
-            Change your Billing
+            Manage your Channel Settings
           </span>
         </div>
         <div className="card-toolbar">
@@ -98,9 +99,8 @@ function Billing(props) {
             value={{value:tabIndex}}
             onChange={handleChange}
           >
-            <ToggleButton variant={tabIndex === 1 ? "primary" : "outline-primary"} type="radio" name="radio" value={1}>Overview</ToggleButton>
-            <ToggleButton variant={tabIndex === 2 ? "primary" : "outline-primary"} type="radio" name="radio" value={2}>Invoice</ToggleButton>
-            <ToggleButton variant={tabIndex === 3 ? "primary" : "outline-primary"} type="radio" name="radio" value={3}>History</ToggleButton>
+            <ToggleButton variant={tabIndex === 1 ? "primary" : "outline-primary"} type="radio" name="radio" value={1}>Channels</ToggleButton>
+            <ToggleButton variant={tabIndex === 2 ? "primary" : "outline-primary"} type="radio" name="radio" value={2}>Funnels</ToggleButton>
           </ToggleButtonGroup>
         </div>
       </div>
@@ -108,31 +108,8 @@ function Billing(props) {
       {/* begin::Form */}
       <div className="form">
         <div className="card-body">
-          {tabIndex === 1 &&
-          <div className="d-flex justify-content-between pt-6">
-            <div className="d-flex flex-column flex-root">
-              <span className="opacity-70 mb-3">Current Plan</span>
-              <h1 className="font-weight-boldest mb-6">Pro</h1>
-              <a
-                className="text-primary"
-                // onClick={}
-              >
-                Change Plan
-              </a>
-            </div>
-            <div className="d-flex flex-column flex-root">
-              <span className="opacity-70 mb-3">period</span>
-              <h1 className="font-weight-boldest mb-6">Yearly</h1>
-            </div>
-
-            <div className="d-flex flex-column flex-root border-left pl-6">
-              <span className="opacity-70 mb-3">Renewal amount</span>
-              <h1 className="font-weight-boldest mb-6">$4620</h1>
-              <span className="font-weight-bolder mb-2">23 Nov, 2021</span>
-            </div>
-          </div>}
-          {tabIndex === 2 && <InvoiceTable />}
-          {tabIndex === 3 && <></>}
+          {tabIndex === 1 && <ChannelTab />}
+          {tabIndex === 2 && <FunnelTab />}
         </div>
       </div>
       {/* end::Form */}
@@ -140,4 +117,4 @@ function Billing(props) {
   );
 }
 
-export default connect(null, auth.actions)(Billing);
+export default connect(null, auth.actions)(Channels);

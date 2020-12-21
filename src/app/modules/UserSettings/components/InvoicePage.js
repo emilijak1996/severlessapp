@@ -3,10 +3,8 @@
 import React from "react";
 import { toAbsoluteUrl } from "../../../../_metronic/_helpers";
 
-function InvoicePage(props) {
-    const invoiceId = props.match.params.id;
-    console.log(invoiceId)
-    return (
+function InvoicePage() {
+  return (
     <>
         {/* <div className="container"> */}
             {/* <!-- begin::Card--> */}
@@ -33,7 +31,7 @@ function InvoicePage(props) {
                             <div className="border-bottom w-100"></div>
                             <div className="d-flex justify-content-between pt-6">
                                 <div className="d-flex flex-column flex-root">
-                                    <span className="font-weight-bolder mb-2">DATE</span>
+                                    <span className="font-weight-bolder mb-2">DATA</span>
                                     <span className="opacity-70">Dec 12, 2017</span>
                                 </div>
                                 <div className="d-flex flex-column flex-root">
@@ -121,7 +119,6 @@ function InvoicePage(props) {
                             <div className="d-flex justify-content-between">
                                 <button type="button" className="btn btn-light-primary font-weight-bold" onClick={() => window.print()}>Download Invoice</button>
                                 <button type="button" className="btn btn-primary font-weight-bold" onClick={ () => window.print()}>Print Invoice</button>
-                                {/* <button type="button" className="btn btn-danger font-weight-bold" onClick={() => { history.goBack()}}> */}
                             </div>
                         </div>
                     </div>
