@@ -105,6 +105,7 @@ function Registration(props) {
           props.register(accessToken);
           disableLoading();
           setSubmitting(false);
+          console.log("signup success!")
         })
         .catch(() => {
           setSubmitting(false);
@@ -115,7 +116,7 @@ function Registration(props) {
           );
           disableLoading();
         });
-    },
+      },
   });
 
   return (
@@ -145,7 +146,7 @@ function Registration(props) {
         {/* begin: firstname */}
         <div className="form-group fv-plugins-icon-container">
           <input
-            placeholder="First name"
+            placeholder="Full name"
             type="text"
             className={`form-control form-control-solid h-auto py-5 px-6 ${getInputClasses(
               "firstname"
@@ -162,7 +163,7 @@ function Registration(props) {
         {/* end: firstname */}
 
         {/* begin: lastname */}
-        <div className="form-group fv-plugins-icon-container">
+        {/* <div className="form-group fv-plugins-icon-container">
           <input
             placeholder="Last name"
             type="text"
@@ -177,7 +178,7 @@ function Registration(props) {
               <div className="fv-help-block">{formik.errors.lastname}</div>
             </div>
           ) : null}
-        </div>
+        </div> */}
         {/* end: lastname */}
 
         {/* begin: Email */}

@@ -7,19 +7,19 @@ import Login from "./Login";
 import Registration from "./Registration";
 import ForgotPassword from "./ForgotPassword";
 import "../../../../_metronic/_assets/sass/pages/login/classic/login-1.scss";
-
+import "./auth.css"
 export function AuthPage() {
   return (
     <>
       <div className="d-flex flex-column flex-root">
         {/*begin::Login*/}
         <div
-          className="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-row-fluid bg-white"
-          id="kt_login"
+          className="login login-1 login-signin-on d-flex flex-column flex-sm-row flex-row-fluid bg-white"
+          id="kt_login" style={{width:"500px!important"}}
         >
           
           {/*begin::Content*/}
-          <div className="flex-row-fluid d-flex flex-column position-relative p-7 overflow-hidden">
+          <div className="flex-row-fluid d-flex flex-column position-relative p-5 overflow-hidden" id="auth_page">
             {/* begin::Content body */}
             <Link to="/" className="flex-column-auto mt-5">
               <img
@@ -74,8 +74,8 @@ export function AuthPage() {
 
           {/*begin::Aside*/}
           <div
-            className="login-aside d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-10 p-lg-10"
-            style={{
+            className="login-aside1 d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-10 p-lg-10"
+            style={{ width:"50%!important",
               backgroundColor: "#364049"
               // backgroundImage: `url(${toAbsoluteUrl("/media/bg/bg-4.jpg")})`,
             }}
@@ -85,12 +85,12 @@ export function AuthPage() {
 
               {/* start:: Aside content */}
               <div className="flex-column-fluid d-flex flex-column justify-content-center">
-                <h3 className="font-size-h1 mb-5 text-white">
+                <div className="mb-5 text-white justify-content-center login_text_title">
                   The Ultimate Dropshipping Solution!
-                </h3>
-                <p className="font-weight-lighter text-white opacity-80">
+                </div>
+                <div className="font-weight-lighter text-white opacity-80 justify-content-center login_text_dec">
                   AliExpress Dropshipping Partner App
-                </p>
+                </div>
               </div>
               {/* end:: Aside content */}
 

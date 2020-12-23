@@ -26,6 +26,8 @@ import {
 } from "./_metronic/layout";
 import {MetronicI18nProvider} from "./_metronic/i18n";
 
+import Firebase, { FirebaseContext } from './app/modules/Firebase';
+
 /**
  * Base URL of the website.
  *
@@ -49,14 +51,17 @@ const { PUBLIC_URL } = process.env;
 _redux.setupAxios(axios, store);
 
 ReactDOM.render(
-  <MetronicI18nProvider>
-    <MetronicLayoutProvider>
-      <MetronicSubheaderProvider>
-        <MetronicSplashScreenProvider>
-          <App store={store} persistor={persistor} basename={PUBLIC_URL} />
-        </MetronicSplashScreenProvider>
-      </MetronicSubheaderProvider>
-    </MetronicLayoutProvider>
-  </MetronicI18nProvider>,
+  // <FirebaseContext.Provider value={new Firebase()}>
+    <MetronicI18nProvider>
+      <MetronicLayoutProvider>
+        <MetronicSubheaderProvider>
+          <MetronicSplashScreenProvider>
+            <App store={store} persistor={persistor} basename={PUBLIC_URL} />
+          </MetronicSplashScreenProvider>
+        </MetronicSubheaderProvider>
+      </MetronicLayoutProvider>
+    </MetronicI18nProvider>,
+  // </FirebaseContext.Provider>,
+
   document.getElementById("root")
 );
