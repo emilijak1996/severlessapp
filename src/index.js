@@ -33,7 +33,8 @@ import Firebase, { FirebaseContext } from './app/modules/Firebase';
  *
  * @see https://facebook.github.io/create-react-app/docs/using-the-public-folder
  */
-const { PUBLIC_URL } = process.env;
+const { PUBLIC_URL } = "";
+console.log("PUBLIC_URL",PUBLIC_URL)
 
 /**
  * Creates `axios-mock-adapter` instance for provided `axios` instance, add
@@ -51,17 +52,17 @@ const { PUBLIC_URL } = process.env;
 _redux.setupAxios(axios, store);
 
 ReactDOM.render(
-  // <FirebaseContext.Provider value={new Firebase()}>
+   <FirebaseContext.Provider value={new Firebase()}>
     <MetronicI18nProvider>
       <MetronicLayoutProvider>
         <MetronicSubheaderProvider>
           <MetronicSplashScreenProvider>
-            <App store={store} persistor={persistor} basename={PUBLIC_URL} />
+            <App store={store} persistor={persistor} basename={""} />
           </MetronicSplashScreenProvider>
         </MetronicSubheaderProvider>
       </MetronicLayoutProvider>
-    </MetronicI18nProvider>,
-  // </FirebaseContext.Provider>,
+    </MetronicI18nProvider>
+   </FirebaseContext.Provider>,
 
   document.getElementById("root")
 );

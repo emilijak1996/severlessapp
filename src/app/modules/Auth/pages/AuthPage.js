@@ -19,16 +19,16 @@ export function AuthPage() {
         >
           
           {/*begin::Content*/}
-          <div className="flex-row-fluid d-flex flex-column position-relative p-5 overflow-hidden" id="auth_page">
+          <div className="flex-row-fluid d-flex flex-column position-relative  overflow-hidden" id="auth_page">
             {/* begin::Content body */}
-            <Link to="/" className="flex-column-auto mt-5">
+            <Link to="/" className="flex-column-auto mt-5" style={{width:"20%"}}>
               <img
                 alt="Logo"
                 className="max-h-70px"
-                src={toAbsoluteUrl("/media/logos/logo-letter-1.png")}
+                src={"/media/logos/logo-letter-1.png"} style={{visibility:"visible!important"}}
               />
             </Link>
-            <div className="d-flex flex-column-fluid flex-center mt-30 mt-lg-0">
+            <div className="d-flex flex-column-fluid flex-center  mt-lg-0">
               <Switch>
                 <ContentRoute path="/auth/login" component={Login} />
                 <ContentRoute
@@ -47,7 +47,7 @@ export function AuthPage() {
 
             {/* begin::Mobile footer */}
             <div className="d-flex d-lg-none flex-column-auto flex-column flex-sm-row justify-content-between align-items-center mt-5 p-5">
-              <div className="text-dark-50 font-weight-bold order-2 order-sm-1 my-2">
+              <div className="text-dark-75 font-weight-bold order-2 order-sm-1 my-2">
                 &copy; 2020 Metronic
               </div>
               <div className="d-flex order-1 order-sm-2 my-2">
@@ -74,39 +74,48 @@ export function AuthPage() {
 
           {/*begin::Aside*/}
           <div
-            className="login-aside1 d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-10 p-lg-10"
+            className="login-aside1"
             style={{ width:"50%!important",
               backgroundColor: "#364049"
               // backgroundImage: `url(${toAbsoluteUrl("/media/bg/bg-4.jpg")})`,
             }}
           >
             {/*begin: Aside Container*/}
+            <div style={{padding:"20px",paddingBottom:"90px"}}>
+              <img src="/media/logos/popsTitle.png" className="logos-auth-page"/>
+              </div>
             <div className="d-flex flex-row-fluid flex-column justify-content-between">
 
               {/* start:: Aside content */}
-              <div className="flex-column-fluid d-flex flex-column justify-content-center">
-                <div className="mb-5 text-white justify-content-center login_text_title">
+             
+              <div className="  justify-content-center">
+                <div className="mb-5 text-white justify-content-center login_text_title" style={{paddingLeft:"60px",paddingRight:"60px"}} >
                   The Ultimate Dropshipping Solution!
                 </div>
                 <div className="font-weight-lighter text-white opacity-80 justify-content-center login_text_dec">
                   AliExpress Dropshipping Partner App
                 </div>
+                <div style={{textAlign:"center",paddingTop:"20%"}} >
+                   <img src="/media/logos/auth-logo1.png" className="logos1-auth-page center justify-content-center" />
+                </div>
+                
               </div>
               {/* end:: Aside content */}
 
+             
               {/* start:: Aside footer for desktop */}
               <div className="d-none flex-column-auto d-lg-flex justify-content-between mt-10">
-                <div className="opacity-70 font-weight-bold	text-white">
+                <div className="opacity-80 font-weight-bold	text-black auth-login-text">
                   &copy; 2020 Metronic
                 </div>
-                <div className="d-flex">
-                  <Link to="/terms" className="text-white">
+                <div className="d-flex text-black">
+                  <Link to="/terms" className="text-black auth-login-text">
                     Privacy
                   </Link>
-                  <Link to="/terms" className="text-white ml-10">
+                  <Link to="/terms" className="text-black ml-10 auth-login-text">
                     Legal
                   </Link>
-                  <Link to="/terms" className="text-white ml-10">
+                  <Link to="/terms" className="text-black ml-10 auth-login-text">
                     Contact
                   </Link>
                 </div>

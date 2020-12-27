@@ -82,8 +82,9 @@ function ForgotPassword(props) {
             )}
             <div className="form-group fv-plugins-icon-container">
               <input
+                placeholder="Email"
                 type="email"
-                className={`form-control form-control-solid h-auto py-5 px-6 ${getInputClasses(
+                className={`form-control form-control-solid auth-page-input ${getInputClasses(
                   "email"
                 )}`}
                 name="email"

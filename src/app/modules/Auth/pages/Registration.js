@@ -121,11 +121,11 @@ function Registration(props) {
 
   return (
     <div className="login-form login-signin" style={{ display: "block" }}>
-      <div className="text-center mb-10 mb-lg-20">
-        <h3 className="font-size-h1">
-          Start Your 14 day Free Trial
-        </h3>
-        <p className="text-muted font-weight-bold">
+      <div className="text-center mb-10">
+          <div  style={{textAlign:"center",fontSize:"36px" ,paddingBottom:"10px"}}>
+              Start Your 14 day Free Trial
+          </div>
+        <p className="text-muted font-weight-bold" style={{paddingLeft:"10%",paddingRight:"10%"}}>
           Join thousands of ecom entrepreneurs achieving dropshipping success
         </p>
       </div>
@@ -146,9 +146,9 @@ function Registration(props) {
         {/* begin: firstname */}
         <div className="form-group fv-plugins-icon-container">
           <input
-            placeholder="Full name"
+            placeholder="First name"
             type="text"
-            className={`form-control form-control-solid h-auto py-5 px-6 ${getInputClasses(
+            className={`form-control form-control-solid  auth-page-input ${getInputClasses(
               "firstname"
             )}`}
             name="firstname"
@@ -163,11 +163,11 @@ function Registration(props) {
         {/* end: firstname */}
 
         {/* begin: lastname */}
-        {/* <div className="form-group fv-plugins-icon-container">
+        <div className="form-group fv-plugins-icon-container">
           <input
             placeholder="Last name"
             type="text"
-            className={`form-control form-control-solid h-auto py-5 px-6 ${getInputClasses(
+            className={`form-control form-control-solid auth-page-input ${getInputClasses(
               "lastname"
             )}`}
             name="lastname"
@@ -178,7 +178,7 @@ function Registration(props) {
               <div className="fv-help-block">{formik.errors.lastname}</div>
             </div>
           ) : null}
-        </div> */}
+        </div>
         {/* end: lastname */}
 
         {/* begin: Email */}
@@ -186,7 +186,7 @@ function Registration(props) {
           <input
             placeholder="Email"
             type="email"
-            className={`form-control form-control-solid h-auto py-5 px-6 ${getInputClasses(
+            className={`form-control form-control-solid  auth-page-input ${getInputClasses(
               "email"
             )}`}
             name="email"
@@ -205,14 +205,14 @@ function Registration(props) {
           <input
             placeholder="Password"
             type="password"
-            className={`form-control form-control-solid h-auto py-5 px-6 ${getInputClasses(
+            className={`form-control form-control-solid  auth-page-input ${getInputClasses(
               "password"
             )}`}
             name="password"
             {...formik.getFieldProps("password")}
           />
           {formik.touched.password && formik.errors.password ? (
-            <div className="fv-plugins-message-container">
+            <div className="fv-plugins-message-container ">
               <div className="fv-help-block">{formik.errors.password}</div>
             </div>
           ) : null}
@@ -241,7 +241,7 @@ function Registration(props) {
          end: Confirm Password */}
             
         {/* begin: Terms and Conditions */}
-        <div className="form-group">
+        <div className="form-group" style={{paddingLeft:"12px"}}>
           <label className="checkbox">
             <input
               type="checkbox"
@@ -271,15 +271,13 @@ function Registration(props) {
             type="submit"
             disabled={
               formik.isSubmitting ||
-              !formik.isValid ||
               !formik.values.acceptTerms
             }
             className="btn btn-login font-weight-bolder px-8 py-4 my-3 font-size-lg"
           >
             <span>Sign Up</span>
             {loading && <span className="ml-3 spinner spinner-white"></span>}
-          </button>
-          <button
+          </button> <button
             id="kt_login_signin_google_submit"
             type="submit"
             disabled={formik.isSubmitting}

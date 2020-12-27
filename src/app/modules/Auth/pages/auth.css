@@ -1,11 +1,18 @@
 #auth_page{
-    width: 54%!important;
+    width: 47%!important;
     display:"inline-block";
 }
 .login-aside1{
-    width: 45%!important;
+    width: 53%!important;
     display:"inline-block";
     background-image: url(https://cdn.image.kfbuy.com/kfbuy1595387544024);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 40px 29px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
 }
 .login_text_title{
     font-size: 48px!important;
@@ -14,4 +21,31 @@
 .login_text_dec{
      font-size: 18px;
      text-align: center;
+}
+.logos-auth-page{
+    width: 193px;
+    height: 40px;
+    visibility:visible!important;
+}
+.logos1-auth-page{
+
+    width: 193px;
+    height: 65px;
+    visibility:visible!important;
+}
+.auth-login-text{
+    color: rgb(45, 46, 46)!important;
+}
+@media (min-width: 992px) {
+    .login.login-1 .login-form {
+      width: 100%;
+      max-width: 500px!important; } }
+img{
+    visibility:visible!important;
+}
+.fv-plugins-message-container .fv-help-block {
+    padding-left: 12px;
+}
+.auth-page-input{
+    border-bottom: 1px solid #b3b3be!important;
 }

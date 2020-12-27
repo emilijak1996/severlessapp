@@ -94,9 +94,9 @@ function Login(props) {
     <div className="login-form login-signin" id="kt_login_signin_form">
       {/* begin::Head */}
       <div className="text-center mb-10 mb-lg-20">
-        <h3 className="font-size-h1">
-          Welcome Back
-        </h3>
+      <div  style={{textAlign:"center",fontSize:"36px" ,paddingBottom:"10px"}}>
+             Welcome Back!
+          </div>
       </div>
       {/* end::Head */}
 
@@ -122,7 +122,7 @@ function Login(props) {
           <input
             placeholder="Email"
             type="email"
-            className={`form-control form-control-solid h-auto py-5 px-6 ${getInputClasses(
+            className={`form-control form-control-solid auth-page-input ${getInputClasses(
               "email"
             )}`}
             name="email"
@@ -138,7 +138,7 @@ function Login(props) {
           <input
             placeholder="Password"
             type="password"
-            className={`form-control form-control-solid h-auto py-5 px-6 ${getInputClasses(
+            className={`form-control form-control-solid auth-page-input ${getInputClasses(
               "password"
             )}`}
             name="password"
@@ -150,7 +150,7 @@ function Login(props) {
             </div>
           ) : null}
         </div>
-        <div className="form-group d-flex flex-wrap justify-content-between align-items-center">
+        <div className="form-group d-flex flex-wrap justify-content-between align-items-center" style={{paddingLeft:"12px"}}>
           <Link
             to="/auth/forgot-password"
             className="text-dark-50 text-hover-primary"
